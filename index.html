@@ -9,7 +9,15 @@
             box-sizing: border-box;
         }
     </style>
-    <script src="https://chat-dev.robotmia.ru/api/widget/lA0kUjqyAJbt0DtozNXpCfbcFDEgfFn5"></script>
+
+    <!-- Скрипт виджета в head, обернутый в DOMContentLoaded -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var script = document.createElement("script");
+            script.src = "https://chat-dev.robotmia.ru/api/widget/lA0kUjqyAJbt0DtozNXpCfbcFDEgfFn5";
+            document.body.appendChild(script);
+        });
+    </script>
 </head>
 <body>
     <h1>Добро пожаловать на мой сайт!</h1>
