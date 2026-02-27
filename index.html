@@ -1,48 +1,271 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт с виджетом</title>
-    <style>
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-    </style>
-    <script src="https://inwardly-darling-razorfish.cloudpub.ru/api/widget/69pqUv9KeEZmi68y9taUVx46fBf1CSVk"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RobotMIA Widget Test</title>
+  <script src="https://chat-dev.robotmia.ru/api/widget/mB58IG0XsrcY33AKE8PPjbnkeQW4ZOfR"></script>
+  <style>
+    :root{
+      --bg1:#0b1220;
+      --bg2:#0b1b2e;
+      --card:#0f223aee;
+      --stroke:#1f3a5a;
+      --text:#e9f2ff;
+      --muted:#b8c7dd;
+      --shadow: 0 20px 60px rgba(0,0,0,.45);
+      --radius: 18px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 20% 10%, #2a7fff33, transparent 55%),
+        radial-gradient(900px 600px at 80% 20%, #00d4ff22, transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+      display:grid;
+      place-items:center;
+      padding:28px 16px;
+    }
+    .wrap{
+      width:min(920px, 100%);
+      display:grid;
+      gap:16px;
+    }
+    .header{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      padding:20px 22px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg, #0f2747cc, #0c203acc);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+    .title{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+    h1{
+      margin:0;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.35;
+    }
+    .pill{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--stroke);
+      color:var(--muted);
+      font-size:12px;
+      white-space:nowrap;
+      user-select:none;
+    }
+
+    .card{
+      padding:18px;
+      border:1px solid var(--stroke);
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:12px;
+    }
+    .btn{
+      grid-column: span 6;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 14px;
+      border-radius:14px;
+      border:1px solid var(--stroke);
+      background:linear-gradient(180deg, #112c4d, #0e2440);
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+      cursor:pointer;
+      transition: transform .08s ease, box-shadow .2s ease, border-color .2s ease, filter .2s ease;
+      box-shadow: 0 10px 24px rgba(0,0,0,.25);
+      user-select:none;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      border-color:#2f5d8a;
+      filter: brightness(1.05);
+    }
+    .btn:active{
+      transform: translateY(0px) scale(.99);
+    }
+    .btn.primary{
+      background:linear-gradient(180deg, #2b8cff, #1e5dff);
+      border-color:#2b8cff;
+      box-shadow: 0 14px 28px rgba(30,93,255,.28);
+    }
+    .btn.danger{
+      background:linear-gradient(180deg, #ff5b7a, #ff2e5f);
+      border-color:#ff5b7a;
+      box-shadow: 0 14px 28px rgba(255,46,95,.22);
+    }
+    .btn.full{
+      grid-column: span 12;
+    }
+    .hint{
+      margin:12px 0 0;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    .status{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px dashed #2a4b70;
+      background: rgba(9, 19, 34, .35);
+      color:var(--muted);
+      font-size:12px;
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background:#ffb020;
+      box-shadow: 0 0 0 4px rgba(255,176,32,.16);
+      flex:0 0 auto;
+    }
+    .status strong{color:var(--text); font-weight:700}
+    @media (max-width: 640px){
+      .btn{grid-column: span 12;}
+      .pill{display:none;}
+    }
+  </style>
 </head>
+
 <body>
-<script src="https://frantically-nonchalant-stallion.cloudpub.ru/api/widget/5wj9349S3B2gCtY5mShLtx4l7mcYV545"></script>
-    <!-- {literal} -->
-        <script type='text/javascript'>
-        window['li'+'v'+'eT'+'ex'] = true,
-        window['l'+'iveT'+'e'+'xID'] = 182803,
-        window['li'+'veTex_'+'obj'+'ect'] = true;
-        (function() {
-        var t = document['cr'+'eateEl'+'ement']('script');
-        t.type ='text/javascript';
-        t.async = true;
-        t.src = '//cs15.'+'l'+'ive'+'tex.r'+'u'+'/js/client.js';
-        var c = document['get'+'Ele'+'mentsB'+'yTagName']('script')[0];
-        if ( c ) c['par'+'e'+'nt'+'Node']['ins'+'er'+'tBef'+'ore'](t, c);
-        else document['docum'+'entEle'+'m'+'ent']['first'+'Ch'+'ild']['appen'+'dChil'+'d'](t);
-        })();
-        </script>
-        <!-- {/literal} -->
+  <div class="wrap">
+    <div class="header">
+      <div class="title">
+        <h1>RobotMIA — тестовая страница виджета</h1>
+        <p class="sub">Кнопки ниже помогут быстро проверить загрузку и открытие окна чата.</p>
+      </div>
+      <div class="pill">Widget Test • v1</div>
+    </div>
 
+    <div class="card">
+      <div class="status" id="status">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span class="dot" id="dot"></span>
+          <div>
+            <div><strong>Статус:</strong> <span id="statusText">проверяю наличие RobotMia…</span></div>
+            <div style="opacity:.85">Если виджет не подключен — вставь скрипт ниже (см. комментарий в коде).</div>
+          </div>
+        </div>
+        <button class="btn" style="grid-column:auto; padding:10px 12px;" type="button" id="recheckBtn">
+          Перепроверить
+        </button>
+      </div>
 
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function(m,e,t,r,i,k,a){
-        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
-    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106770277', 'ym');
+      <div class="grid" style="margin-top:12px;">
+        <!-- ВАЖНО: тут ровно то, что ты просил -->
+        <button class="btn primary" type="button" onclick="RobotMia.showChatWindow()">
+          Открыть чат (RobotMia.showChatWindow)
+        </button>
 
-    ym(106770277, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/106770277" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
+        <button class="btn" type="button" id="safeOpenBtn">
+          Открыть чат (safe)
+        </button>
+
+        <button class="btn" type="button" id="logBtn">
+          Проверить в консоли
+        </button>
+
+        <button class="btn danger" type="button" id="resetBtn">
+          Очистить лог/статус
+        </button>
+
+        <button class="btn full" type="button" id="helpBtn">
+          Где вставлять код виджета?
+        </button>
+      </div>
+
+      <p class="hint">
+        Подсказка: если виджет подключается асинхронно, сначала дождись его загрузки — статус сверху должен стать “RobotMia найден”.
+      </p>
+    </div>
+  </div>
+
+  <!--
+    ✅ СЮДА ВСТАВЬ СКРИПТ/СНИППЕТ ПОДКЛЮЧЕНИЯ ВИДЖЕТА RobotMIA
+    Например:
+    <script src="..."></script>
+    или код, который выдает ваша платформа/кабинет.
+  -->
+
+  <script>
+    const statusText = document.getElementById("statusText");
+    const dot = document.getElementById("dot");
+
+    function setStatus(ok) {
+      statusText.textContent = ok ? "RobotMia найден ✅" : "RobotMia НЕ найден ❌";
+      dot.style.background = ok ? "#2ee59d" : "#ff4d4d";
+      dot.style.boxShadow = ok
+        ? "0 0 0 4px rgba(46,229,157,.16)"
+        : "0 0 0 4px rgba(255,77,77,.16)";
+    }
+
+    function hasRobotMia() {
+      return !!(window.RobotMia && typeof window.RobotMia.showChatWindow === "function");
+    }
+
+    function recheck() {
+      setStatus(hasRobotMia());
+    }
+
+    document.getElementById("recheckBtn").addEventListener("click", recheck);
+
+    document.getElementById("safeOpenBtn").addEventListener("click", () => {
+      if (hasRobotMia()) {
+        window.RobotMia.showChatWindow();
+      } else {
+        alert("RobotMia не найден. Подключи виджет (см. комментарий внизу HTML).");
+      }
+    });
+
+    document.getElementById("logBtn").addEventListener("click", () => {
+      console.log("[Widget Test] window.RobotMia =", window.RobotMia);
+      console.log("[Widget Test] hasRobotMia() =", hasRobotMia());
+      alert("Логи отправлены в консоль (F12 → Console).");
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      console.clear();
+      recheck();
+    });
+
+    document.getElementById("helpBtn").addEventListener("click", () => {
+      alert("Вставь скрипт/сниппет подключения виджета внизу HTML, прямо перед </body> (см. комментарий).");
+    });
+
+    // первичная проверка
+    recheck();
+  </script>
 </body>
 </html>
